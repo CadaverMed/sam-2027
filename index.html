@@ -44,14 +44,7 @@ header{border-bottom:0}
 #program details{font-size:14px;line-height:1.5}
 
 .manager-trigger{display:block;width:fit-content;margin-top:12px;padding:6px 0;background:none;border:0;color:inherit;font:inherit;font-size:14px;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
-.manager-dialog{width:min(420px,calc(100% - 40px));padding:28px;border:1px solid #687469;background:#fff;color:#29342a}
-.manager-dialog::backdrop{background:rgba(20,28,21,.6)}
-.manager-dialog h2{font-size:26px;letter-spacing:-.03em;margin:0 0 20px}
-.manager-links{display:grid;gap:12px}
-.manager-links a{display:block;padding:14px 18px;background:#29342a;color:#fff;text-decoration:none;font-weight:bold}
-.manager-dialog form{margin-top:20px}
-.manager-dialog button{background:none;border:0;padding:8px 0;color:inherit;font:inherit;cursor:pointer;text-decoration:underline}
-.manager-trigger:focus-visible,.manager-dialog a:focus-visible,.manager-dialog button:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.manager-trigger:focus-visible{outline:2px solid currentColor;outline-offset:4px}
 </style>
 <header><div class="wrap"><span>CADAVER.MED</span><a href="#program">Программа</a></div></header>
 <main>
@@ -60,7 +53,7 @@ header{border-bottom:0}
 <p>Кадавер-практикум для врачей-косметологов. Видеодиссекции, УЗИ-разбор клинических случаев и практическая отработка СЛР.</p>
 <p class="meta">22 января 2027 · 10:00–16:00 · Зал «Печора»</p>
 <a class="cta" href="#participation">Условия участия</a>
-<button type="button" class="manager-trigger" aria-haspopup="dialog" aria-controls="manager-dialog">Уточнить у менеджера</button>
+<a class="manager-trigger" href="https://ig.me/m/cadaver.med" target="_blank" rel="noopener noreferrer">Познакомиться с нами и приобрести билет</a>
 </div></section>
 <section id="program"><div class="wrap"><h2>Программа</h2>
 <article class="row"><time>10:00–13:00</time><div><h3>Филлер введён. Почему результат другой?</h3><details><summary>Подробнее о блоке</summary><p>«Вы вводите филлер в точку. А форму создаёте в пространстве».</p><ul><li>На видеодиссекциях вместе с анатомом посмотрим, где проходят границы между слоями мягких тканей и как они связаны между собой.</li><li>На клинических примерах разберём, как строение тканей влияет на распределение филлера и почему после коррекции контур может отличаться от запланированного.</li></ul></details></div></article>
@@ -78,16 +71,5 @@ header{border-bottom:0}
 </main>
 <footer><div class="wrap">CADAVER.MED · SAM Expo 2027</div></footer>
 
-<dialog class="manager-dialog" id="manager-dialog" aria-labelledby="manager-title">
-<h2 id="manager-title">Уточнить у менеджера</h2>
-<div class="manager-links">
-<a href="https://ig.me/m/cadaver.med" target="_blank" rel="noopener noreferrer">Instagram</a>
-</div>
-<form method="dialog"><button type="submit">Закрыть</button></form>
-</dialog>
-<script>
-const managerDialog=document.getElementById('manager-dialog');
-document.querySelectorAll('.manager-trigger').forEach(button=>button.addEventListener('click',()=>managerDialog.showModal()));
-managerDialog.addEventListener('click',event=>{if(event.target===managerDialog){const rect=managerDialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)managerDialog.close();}});
-</script>
+
 </html>
